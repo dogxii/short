@@ -1,6 +1,6 @@
-# s.dogxi.me - 无服务器 URL 剪贴板
+# Short - 无服务器 URL 剪贴板
 
-**s.dogxi.me** (Short) 是一个现代化的无服务器 URL 剪贴板工具，让你可以通过 URL 安全地分享文本、代码和 Markdown 内容。
+Short 是一个现代化的无服务器 URL 剪贴板工具，让你可以通过 URL 安全地分享文本、代码和 Markdown 内容。
 
 与传统的 Pastebin 或短链接服务不同，**Short 不会将你的数据存储在服务器上**。相反，它将你的内容压缩、加密（可选）并直接编码到 URL 的哈希/查询参数中。这意味着你的数据与链接本身一样持久，并且完全隐私。
 
@@ -95,7 +95,7 @@ npm run build
 1. 将代码推送到 Git 仓库 (GitHub/GitLab)。
 2. 在 **Vercel** 中导入项目。
 3. Vercel 会自动检测 SvelteKit 并进行部署。
-4. 在 Vercel 设置中绑定你的自定义域名（例如 `s.dogxi.me`）。
+4. 在 Vercel 设置中绑定你的自定义域名。
 
 ## 📄 许可证
 
