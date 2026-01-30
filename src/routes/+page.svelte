@@ -1343,6 +1343,20 @@
     cursor: pointer;
   }
 
+  /* Make form controls readable on mobile: set font-size to 16px */
+  @media (max-width: 480px) {
+    .editor-textarea,
+    .option-input,
+    .password-input,
+    .option-select,
+    .ttl-value,
+    input[type='number'],
+    textarea,
+    input {
+      font-size: 16px;
+    }
+  }
+
   /* Link Output */
   .link-stats {
     display: flex;
