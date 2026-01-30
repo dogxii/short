@@ -1,0 +1,31 @@
+{
+	"name": "short-clipboard",
+	"version": "1.0.0",
+	"description": "URL Clipboard - Share text via URL | s.dogxi.me",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-vercel": "^5.4.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^4.0.0",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"vite": "^5.0.0"
+	},
+	"type": "module",
+	"author": "Dogxi",
+	"license": "MIT",
+	"homepage": "https://s.dogxi.me",
+	"dependencies": {
+		"highlight.js": "^11.11.1",
+		"lz-string": "^1.5.0",
+		"marked": "^17.0.1"
+	}
+}
