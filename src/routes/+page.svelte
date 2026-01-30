@@ -16,7 +16,7 @@
   } from '$lib/spack'
   import { generateQRCodeSvg } from '$lib/qrcode'
   import { fade, slide, scale } from 'svelte/transition'
-  import { onMount } from 'svelte'
+  import { onMount, untrack } from 'svelte'
   import { marked } from 'marked'
   import hljs from 'highlight.js'
   import 'highlight.js/styles/atom-one-dark.css'
@@ -122,15 +122,21 @@
         console.error('Failed to load history', e)
       }
     }
+  })
 
-    // Check URL for code
-    const urlParams = new URLSearchParams(window.location.search)
-    const encoded = urlParams.get('t')
+  $effect(() => {
+    const encoded = $page.url.searchParams.get('t')
 
     if (encoded) {
       mode = 'view'
       loading = true
       encodedData = encoded
+      // Reset state
+      needsPassword = false
+      viewPassword = ''
+      decodedContent = ''
+      viewError = ''
+      viewTtlInfo = null
 
       try {
         if (!isValid(encoded)) {
@@ -157,7 +163,9 @@
 
         // Try to decode
         decodedContent = decode(encoded, { checkTtl: true })
-        addToHistory(encoded, decodedContent, hasTtl(encoded), false)
+        untrack(() =>
+          addToHistory(encoded, decodedContent, hasTtl(encoded), false),
+        )
         viewError = ''
         loading = false
       } catch (e) {
@@ -165,6 +173,7 @@
         loading = false
       }
     } else {
+      mode = 'create'
       loading = false
     }
   })
