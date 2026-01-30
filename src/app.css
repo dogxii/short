@@ -187,8 +187,8 @@ code {
 
 /* Selection */
 ::selection {
-	background: var(--color-primary);
-	color: white;
+	background: var(--color-text);
+	color: var(--color-bg);
 }
 
 /* Scrollbar */
